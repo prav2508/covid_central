@@ -1,3 +1,8 @@
+@font-face {
+  font-family: bebas;
+  src: url("./fonts/bebas.ttf");
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,106 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#cc_brand{
+  font-size: 35px;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  left: 45px;
+  
+ }
+
+ .bg-dark {
+  background-color: 
+  #1d242b !important;
+}
+
+.nav-liner{
+height: 5px;
+background-color: #7a7a7a;
+}
+#counter_main{
+  max-width:25%;
+  }
+
+.counter-number{
+  font-size: 55px;
+  /*font-family: esc art;*/
+}  
+
+.counter-header{
+  /*font-family: new artic;*/
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+.animate-flicker {
+   -webkit-animation: flickerAnimation 5s infinite;
+   -moz-animation: flickerAnimation 5s infinite;
+   -o-animation: flickerAnimation 5s infinite;
+    animation: flickerAnimation 5s infinite;
+    font-size: 30px;
+    
+}
+.table-wrap{
+  overflow-y: auto;
+  max-height: 300px;
+}
+#insight-table-header{
+	position: sticky;
+    top: 0px;
+}
+.master-insight-table{
+  width: 100%;
+  overflow-y: auto;
+  
+}
+.master-insight-value{
+  font-size: 25px;
+}
+
+.master-insight-header{
+  font-size: 15px;
+}
+
+.liner{
+  height: 50px;
+background-color: lightgray;
+font-family:bebas;
+font-size:30px;
+padding-top:5px;
+}
+
+
+.global-footer{
+	background-color:#232529;
+	width:100%;
+	position:absolute;
+	margin-top:50px;
+	/*padding-bottom:50px;*/
+	color:white;
+	
+}
+
+.follow-ups{
+	width:300px;
 }
