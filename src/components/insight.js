@@ -5,9 +5,7 @@ import axios from 'axios';
 function Insight(){
 
   const [country,setCountry] = useState([]);
-  const sorted = country.sort((a,b) => { 
-	   return a.latest_data.confirmed < b.latest_data.confirmed
-   } );
+
   useEffect(()=>{
     axios.get('https://corona-api.com/countries')
     .then(res=>{
@@ -47,7 +45,7 @@ function Insight(){
   <tbody>
  
 	
-			{sorted.map((item,index) => (
+			{country.sort((a, b) => a.latest_data.confirmed < b.latest_data.confirmed?1:-1).map((item,index) => (
 				<tr>
 					  <th scope="row">{index+1}</th>
 					  <td>{item.name}</td>
