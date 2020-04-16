@@ -171,8 +171,6 @@ function Charts(){
   <strong class="float-left">Insights</strong>
   </div>
   <div class="card-body">
-  <div class="row-fluid"> 
-  <div class="col-sm"> 
   <div style={{
               width:"100%",
               height:"100%",
@@ -192,78 +190,72 @@ function Charts(){
           }}
         />
        </div> 
-      </div>
-      </div>
 
-<div class="row-fluid p-0">
-<div class="col-sm">
-      <div style={{
-             width:"100%",
-             height:"100%",
-          }}>
-        <Line
-          data={confirmed_cases}
-          options={{
-            title:{
-              display:true,
-              text:'Confirmed cases',
-              fontSize:15
-            },
-            legend:{
-              display:true,
-              position:'right'
-            }
-          }}
-        />
-      </div>
-     </div>
+
+            <div style={{
+                    width:"100%",
+                    height:"100%",
+                }}>
+                <Line
+                data={confirmed_cases}
+                options={{
+                    title:{
+                    display:true,
+                    text:'Confirmed cases',
+                    fontSize:15
+                    },
+                    legend:{
+                    display:true,
+                    position:'right'
+                    }
+                }}
+                />
+            </div>
      
-     <div class="col-sm">
-        <div style={{
-                width:"100%",
-                height:"100%",
-            }}>
-            <Line
-            data={recover_cases}
-            options={{
-                title:{
-                display:true,
-                text:'Recovered cases',
-                fontSize:15
-                },
-                legend:{
-                display:true,
-                position:'right'
-                }
-            }}
-            />
-        </div>    
 
-        </div>     
+            <div style={{
+                    width:"100%",
+                    height:"100%",
+                }}>
+                <Line
+                data={recover_cases}
+                options={{
+                    title:{
+                    display:true,
+                    text:'Recovered cases',
+                    fontSize:15
+                    },
+                    legend:{
+                    display:true,
+                    position:'right'
+                    }
+                }}
+                />
+            </div>    
 
-        <div class="col-sm">
-                    <div style={{
-                            width:"100%",
-                            height:"100%",
-                        }}>
-                        <Line
-                        data={death_cases}
-                        options={{
-                            title:{
-                            display:true,
-                            text:'Death cases',
-                            fontSize:15
-                            },
-                            legend:{
-                            display:true,
-                            position:'right'
-                            }
-                        }}
-                        />
-                    </div> 
+       
+                        <div style={{
+                                width:"100%",
+                                height:"100%",
+                            }}>
+                            <Line
+                            data={death_cases}
+                            options={{
+                                title:{
+                                display:true,
+                                text:'Death cases',
+                                fontSize:15
+                                },
+                                legend:{
+                                display:true,
+                                position:'right'
+                                }
+                            }}
+                            />
+                        </div> 
 
-                    </div>
-        </div>       
+                
+           
         </div>
       </div>     
       </div>
