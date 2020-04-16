@@ -13,7 +13,7 @@ function Footer(){
 					<div class="col-sm">
 						<span class="float-left">
 						<p class="lead p-3">
-						An aesthetic yet minimalistic <br/>dashboard, of the pandemic Coronavirus.
+						An aesthetic yet minimalistic <br/>dashboard for the pandemic Coronavirus.
 						</p>
 						<span class="lead">
 						Open-sourced for the community!
