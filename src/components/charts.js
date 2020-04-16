@@ -69,7 +69,6 @@ function Charts(){
             backgroundColor: 'rgba(32, 33, 33,1)',
             borderColor: 'rgba(32, 33, 33,1)',
             borderWidth: 0.5,
-            responsive:true,
             data: datax_death.slice(Math.max(datay_confirmed.length - 30, 0))
           }
         ]
@@ -84,7 +83,6 @@ function Charts(){
             backgroundColor: ['#150f91','#b6f23f','#e00013'],
             //borderColor: 'rgba(176, 25, 25,1)',
             borderWidth: 0.5,
-            responsive:true,
             data: [datax_confirmed[datax_confirmed.length-1],datax_recovery[datax_recovery.length-1],datax_death[datax_death.length-1]]
           },
         ]
@@ -108,9 +106,9 @@ function Charts(){
           data={all_cases}
           options={{
             title:{
-              display:true,
+              display:false,
               text:'Overall Insight',
-              fontSize:25
+              fontSize:25,
             },
             legend:{
               display:false,
@@ -126,9 +124,9 @@ function Charts(){
           }}></div>
                     <Pie data={pie_cases} options={{
                                 title:{
-                                display:true,
+                                display:false,
                                 text:'Ratio of covid cases',
-                                fontSize:25
+                                fontSize:25,
                                 },
                                 legend:{
                                 display:true,
