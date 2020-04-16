@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-function Insight(){
+function Tables(){
 
   const [country,setCountry] = useState([]);
 
   useEffect(()=>{
     axios.get('https://corona-api.com/countries')
     .then(res=>{
-        console.log(res.data.data)
         setCountry(res.data.data)
       })
     .catch(err=>{
@@ -19,15 +18,12 @@ function Insight(){
   
   
       return ( 
-          <div class="container-fluid">
-            <div class="row-fluid">
+
             <div class="card">
                 <div class="card-header lead float-left">
-                    <strong class="float-left">Insights</strong>
+                    <strong class="float-left">Affected countries</strong>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Affected countries</h5>
-                    <p class="card-text"></p>
 
 <div class="table-wrap table-sm table-hover">
 <table class="table" id="insight-data">
@@ -65,12 +61,11 @@ function Insight(){
 </div>
                 </div>
                 </div>
-            </div>
-    </div>
+
 
          
           
       );
   }
 
-export default Insight
+export default Tables

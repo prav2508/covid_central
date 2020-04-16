@@ -43,9 +43,6 @@ background-color: #7a7a7a;
   /*font-family: esc art;*/
 }  
 
-.counter-header{
-  /*font-family: new artic;*/
-}
 
 @keyframes flickerAnimation {
   0%   { opacity:1; }

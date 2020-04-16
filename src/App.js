@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Counter from './components/counter'
-import Insight from './components/insight'
+import Tables from './components/tables'
 import Footer from './components/footer'
+import Charts from './components/charts'
 function App() {
   return (
     <div className="App">
@@ -29,13 +29,19 @@ function App() {
   </div>
 </div>
 <div class="container-fluid">
-            <div class="row-fluid p-0">
+            <div class="row-fluid p-2">
                           <div class="col-md">
-                          <Insight/>
+                          <Tables />
                           </div>
                   </div>
           </div>
-		  
+          <div class="container-fluid">
+            <div class="row-fluid p-2">
+                          <div class="col-md">
+                          <Charts/>
+                          </div>
+                  </div>
+          </div>
 		<Footer/>  
     </div>
   );
