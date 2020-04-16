@@ -1,6 +1,7 @@
 import React ,{useEffect,useState} from 'react';
 import axios from 'axios';
 import {Line} from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
 
 
@@ -8,13 +9,11 @@ import {Line} from 'react-chartjs-2';
 function Charts(){
 
     const [globaltimeline,setGlobaltimeline] = useState([]);
-    const [c_c,setC_c]= useState([]);
 
     useEffect(()=>{
         axios.get('https://corona-api.com/timeline')
         .then(res=>{
             setGlobaltimeline(res.data.data.sort((a,b)=>a.date>b.date?1:-1));
-            console.log(res.data.data.sort((a,b)=>a.date>b.date?1:-1));
           })
         .catch(err=>{
           console.log(err)
@@ -41,7 +40,7 @@ function Charts(){
      }
      createpoint();
     const all_cases = {
-        labels: datay_confirmed,
+        labels: datay_confirmed.slice(Math.max(datay_confirmed.length - 30, 0)),
         datasets: [
           {
             label: 'confirmed cases',
@@ -51,7 +50,7 @@ function Charts(){
             borderColor: 'rgba(176, 25, 25,1)',
             borderWidth: 0.5,
             responsive:true,
-            data: datax_confirmed
+            data: datax_confirmed.slice(Math.max(datay_confirmed.length - 30, 0))
           },
           {
             label: 'Recovered cases',
@@ -61,7 +60,7 @@ function Charts(){
             borderColor: 'rgba(4, 138, 33,1)',
             borderWidth: 0.5,
             responsive:true,
-            data: datax_recovery
+            data: datax_recovery.slice(Math.max(datay_confirmed.length - 30, 0))
           },
           {
             label: 'Death cases',
@@ -71,56 +70,26 @@ function Charts(){
             borderColor: 'rgba(32, 33, 33,1)',
             borderWidth: 0.5,
             responsive:true,
-            data: datax_death
+            data: datax_death.slice(Math.max(datay_confirmed.length - 30, 0))
           }
         ]
       }
-      const confirmed_cases = {
-        labels: datay_confirmed,
+      const pie_cases = {
+        labels: ["confirmed","recovered","death"],
         datasets: [
           {
-            label: 'confirmed cases',
+            label: '',
             fill: true,
             lineTension: 0.3,
-            backgroundColor: 'rgba(176, 25, 25,0.5)',
-            borderColor: 'rgba(176, 25, 25,1)',
+            backgroundColor: ['#150f91','#b6f23f','#e00013'],
+            //borderColor: 'rgba(176, 25, 25,1)',
             borderWidth: 0.5,
             responsive:true,
-            data: datax_confirmed
+            data: [datax_confirmed[datax_confirmed.length-1],datax_recovery[datax_recovery.length-1],datax_death[datax_death.length-1]]
           },
         ]
       }
-      const recover_cases = {
-        labels: datay_recovery,
-        datasets: [
-          {
-            label: 'Recovered cases',
-            fill: true,
-            lineTension: 0.3,
-            backgroundColor: 'rgba(4, 138, 33,0.5)',
-            borderColor: 'rgba(4, 138, 33,1)',
-            borderWidth: 0.5,
-            responsive:true,
-            data: datax_recovery
-          }
-        ]
-      }
 
-      const death_cases = {
-        labels: datay_death,
-        datasets: [
-          {
-            label: 'Death cases',
-            fill: true,
-            lineTension: 0.3,
-            backgroundColor: 'rgba(32, 33, 33,0.5)',
-            borderColor: 'rgba(32, 33, 33,1)',
-            borderWidth: 0.5,
-            responsive:true,
-            data: datax_death
-          }
-        ]
-      }
       return ( 
     <div>
 
@@ -141,7 +110,7 @@ function Charts(){
             title:{
               display:true,
               text:'Overall Insight',
-              fontSize:15
+              fontSize:25
             },
             legend:{
               display:false,
@@ -150,75 +119,29 @@ function Charts(){
           }}
         />
        </div> 
-       
-
-            <div style={{
-                    width:"100%",
-                    height:"100%",
-                }}>
-                <Line
-                data={confirmed_cases}
-                options={{
-                    title:{
-                    display:true,
-                    text:'Confirmed cases',
-                    fontSize:15
-                    },
-                    legend:{
-                    display:false,
-                    position:'bottom'
-                    }
-                }}
-                />
-            </div>
-     
-
-            <div style={{
-                    width:"100%",
-                    height:"100%",
-                }}>
-                <Line
-                data={recover_cases}
-                options={{
-                    title:{
-                    display:true,
-                    text:'Recovered cases',
-                    fontSize:15
-                    },
-                    legend:{
-                    display:false,
-                    position:'bottom'
-                    }
-                }}
-                />
-            </div>    
-
-       
-                        <div style={{
-                                width:"100%",
-                                height:"100%",
-                            }}>
-                            <Line
-                            data={death_cases}
-                            options={{
+       <div style={{
+      position:"relative",
+              height:"100%", 
+              width:"100%"
+          }}></div>
+                    <Pie data={pie_cases} options={{
                                 title:{
                                 display:true,
-                                text:'Death cases',
-                                fontSize:15
+                                text:'Ratio of covid cases',
+                                fontSize:25
                                 },
                                 legend:{
-                                display:false,
-                                position:'bottom'
+                                display:true,
+                                position:'bottom',
+                                
+                        
                                 }
-                            }}
-                            />
-                        </div> 
-
-                
-           
+                            }}/>
+                            Click on labels to enable/disable field.
+           </div>
         </div>
       </div>     
-      </div>
+    
               
 
           
