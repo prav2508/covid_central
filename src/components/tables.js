@@ -25,19 +25,21 @@ function Tables(){
                 </div>
                 <div class="card-body">
 
-<div class="table-wrap table-sm table-hover">
-<table class="table" id="insight-data">
-  <thead class="thead-dark position-sticky" id="insight-table-header">
+<div class="table-wrap table-sm table-hover ">
+<table class="table sticky-top position-sticky" id="insight-data">
+  
+  <thead class="thead-dark sticky-top position-sticky" id="insight-table-header">
     <tr>
-      <th scope="col">No.</th>
-      <th scope="col">Country</th>
-      <th scope="col">Confirmed</th>
-      <th scope="col">Recovered</th>
-	  <th scope="col">Critical</th>
-      <th scope="col">Deaths</th>
+      <th class="sticky-top position-sticky" scope="col">No.</th>
+      <th class="sticky-top position-sticky" scope="col">Country</th>
+      <th class="sticky-top position-sticky" scope="col">Confirmed</th>
+      <th class="sticky-top position-sticky" scope="col">Recovered</th>
+	    <th class="sticky-top position-sticky" scope="col">Critical</th>
+      <th class="sticky-top position-sticky" scope="col">Deaths</th>
 	  
     </tr>
   </thead>
+
   <tbody>
  
 	

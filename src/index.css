@@ -77,8 +77,10 @@ background-color: #7a7a7a;
   max-height: 300px;
 }
 #insight-table-header{
-	position: sticky;
-    top: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
 }
 .master-insight-table{
   width: 100%;
