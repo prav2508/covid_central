@@ -46,52 +46,31 @@ function Charts(){
           {
             label: 'confirmed cases',
             fill: false,
-            lineTension: 0.5,
+            lineTension: 0.3,
             backgroundColor: 'rgba(176, 25, 25,0.5)',
             borderColor: 'rgba(176, 25, 25,1)',
-            borderWidth: 2,
-            scales: {
-                yAxes: [{
-                    type: 'time',
-                    time: {
-                        unit: 'month'
-                    }
-                }]
-            },
+            borderWidth: 0.5,
+            responsive:true,
             data: datax_confirmed
           },
           {
             label: 'Recovered cases',
             fill: false,
-            lineTension: 0.5,
+            lineTension: 0.3,
             backgroundColor: 'rgba(4, 138, 33,0.5)',
             borderColor: 'rgba(4, 138, 33,1)',
-            borderWidth: 2,
-            scales: {
-                yAxes: [{
-                    type: 'time',
-                    time: {
-                        unit: 'month'
-                    }
-                }]
-            },
+            borderWidth: 0.5,
+            responsive:true,
             data: datax_recovery
           },
           {
             label: 'Death cases',
             fill: false,
-            lineTension: 0.5,
+            lineTension: 0.3,
             backgroundColor: 'rgba(32, 33, 33,1)',
             borderColor: 'rgba(32, 33, 33,1)',
-            borderWidth: 2,
-            scales: {
-                yAxes: [{
-                    type: 'time',
-                    time: {
-                        unit: 'month'
-                    }
-                }]
-            },
+            borderWidth: 0.5,
+            responsive:true,
             data: datax_death
           }
         ]
@@ -102,18 +81,11 @@ function Charts(){
           {
             label: 'confirmed cases',
             fill: true,
-            lineTension: 0.5,
+            lineTension: 0.3,
             backgroundColor: 'rgba(176, 25, 25,0.5)',
             borderColor: 'rgba(176, 25, 25,1)',
-            borderWidth: 2,
-            scales: {
-                yAxes: [{
-                    type: 'time',
-                    time: {
-                        unit: 'month'
-                    }
-                }]
-            },
+            borderWidth: 0.5,
+            responsive:true,
             data: datax_confirmed
           },
         ]
@@ -124,18 +96,11 @@ function Charts(){
           {
             label: 'Recovered cases',
             fill: true,
-            lineTension: 0.5,
+            lineTension: 0.3,
             backgroundColor: 'rgba(4, 138, 33,0.5)',
             borderColor: 'rgba(4, 138, 33,1)',
-            borderWidth: 2,
-            scales: {
-                yAxes: [{
-                    type: 'time',
-                    time: {
-                        unit: 'month'
-                    }
-                }]
-            },
+            borderWidth: 0.5,
+            responsive:true,
             data: datax_recovery
           }
         ]
@@ -147,18 +112,11 @@ function Charts(){
           {
             label: 'Death cases',
             fill: true,
-            lineTension: 0.5,
+            lineTension: 0.3,
             backgroundColor: 'rgba(32, 33, 33,0.5)',
             borderColor: 'rgba(32, 33, 33,1)',
-            borderWidth: 2,
-            scales: {
-                yAxes: [{
-                    type: 'time',
-                    time: {
-                        unit: 'month'
-                    }
-                }]
-            },
+            borderWidth: 0.5,
+            responsive:true,
             data: datax_death
           }
         ]
@@ -170,10 +128,12 @@ function Charts(){
   <div class="card-header lead">
   <strong class="float-left">Insights</strong>
   </div>
+  <p class="card-text">Hover on the points to view coordinates.</p>
   <div class="card-body">
   <div style={{
-              width:"100%",
-              height:"100%",
+      position:"relative",
+              height:"100%", 
+              width:"100%"
           }}>
         <Line
           data={all_cases}
@@ -181,16 +141,16 @@ function Charts(){
             title:{
               display:true,
               text:'Overall Insight',
-              fontSize:20
+              fontSize:15
             },
             legend:{
-              display:true,
-              position:'right'
+              display:false,
+              position:'bottom'
             }
           }}
         />
        </div> 
-
+       
 
             <div style={{
                     width:"100%",
@@ -205,8 +165,8 @@ function Charts(){
                     fontSize:15
                     },
                     legend:{
-                    display:true,
-                    position:'right'
+                    display:false,
+                    position:'bottom'
                     }
                 }}
                 />
@@ -226,8 +186,8 @@ function Charts(){
                     fontSize:15
                     },
                     legend:{
-                    display:true,
-                    position:'right'
+                    display:false,
+                    position:'bottom'
                     }
                 }}
                 />
@@ -247,8 +207,8 @@ function Charts(){
                                 fontSize:15
                                 },
                                 legend:{
-                                display:true,
-                                position:'right'
+                                display:false,
+                                position:'bottom'
                                 }
                             }}
                             />
