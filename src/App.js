@@ -7,37 +7,37 @@ import Charts from './components/charts'
 function App() {
   return (
     <div className="App">
-     <nav class="navbar navbar-dark bg-dark">
+     <nav className="navbar navbar-dark bg-dark">
        <span>
-        <a class="navbar-brand" id="cc_brand" href="https://covid-central.now.sh/"><span><b>Covid Central</b></span></a>
+        <a className="navbar-brand" id="cc_brand" href="https://covid-central.now.sh/"><span><b>Covid Central</b></span></a>
         </span>
     </nav>
 
-    <div class="nav-liner">
+    <div className="nav-liner">
     </div>
    
-            <div class="liner">
-              <span class="">#Stay_Home , #Stay_Safe</span>
+            <div className="liner">
+              <span className="">#Stay_Home , #Stay_Safe</span>
             </div>
            
-    <div class="container-fluid">
-  <div class="row-fluid p-3">
-    <div class="col-md">
+    <div className="container-fluid">
+  <div className="row-fluid p-3">
+    <div className="col-md">
     <Counter/>
     </div>
     
   </div>
 </div>
-<div class="container-fluid">
-            <div class="row-fluid p-2">
-                          <div class="col-md">
+<div className="container-fluid">
+            <div className="row-fluid p-2">
+                          <div className="col-md">
                           <Tables />
                           </div>
                   </div>
           </div>
-          <div class="container-fluid">
-            <div class="row-fluid p-2">
-                          <div class="col-md">
+          <div className="container-fluid">
+            <div className="row-fluid p-2">
+                          <div className="col-md">
                           <Charts/>
                           </div>
                   </div>

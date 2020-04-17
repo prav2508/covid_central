@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
-import {formatNumber} from '../etc/common';
+import {formatNumber,lastUpdated} from '../etc/common';
 
 function Counter(){
 
@@ -16,6 +16,7 @@ function Counter(){
   const [spres,setSpres]=useState(0);
   const [rprev,setRprev]=useState(0);
   const [rpres,setRpres]=useState(0);
+  const [last_updated,setLast_updated] = useState(0);
   //const [spreadrate,setSpreadrate] = useState(0);
   //const [recoveryrate,setRecoveryrate] = useState(0);
   useEffect(()=> {
@@ -33,58 +34,66 @@ function Counter(){
               setSpres(res.data.data[0].confirmed);
               setRprev(res.data.data[1].recovered);
               setRpres(res.data.data[0].recovered);
+              setLast_updated(res.data.data[0].updated_at);
             })
             .catch(err =>{
                 console.log(err)
             })
 
-  },[global,confirmed,newconfirmed,active,recovered,newrecovered,death,newdeath,sprev,spres,rpres,rprev]);
+  },[global,confirmed,newconfirmed,active,recovered,newrecovered,death,newdeath,sprev,spres,rpres,rprev,last_updated]);
 
       return ( 
-          <div class="container-fluid p-0">
-              
-        <div class="row">
-          <div class="col-md span4 p-2">
-            <h4 class="counter-header lead">CONFIRMED</h4>
-           <h2 class="counter-number lead">{formatNumber(confirmed)}</h2> 
+          <div className="container-fluid p-0">
+              <div className="row p-0 m-0">
+                <div className="col-sm p-0">
+                <span className="float-middle">
+                <p className="" style={{fontSize:"20px"}}><small>Last updated about </small> <strong>{lastUpdated(last_updated)} hours ago</strong></p>
+                </span>
+                </div>
+                </div> 
+        <div className="row">
+          
+          <div className="col-md span4 p-2">
+            <h4 className="counter-header lead">CONFIRMED</h4>
+           <h2 className="counter-number lead">{formatNumber(confirmed)}</h2> 
            <span>+[{formatNumber(newconfirmed)}]</span>
       </div>
 
         
         
-          <div class="col-md span4 p-2">
-          <h4 class="counter-header lead">ACTIVE</h4>
+          <div className="col-md span4 p-2">
+          <h4 className="counter-header lead">ACTIVE</h4>
           
-          <h2 class="counter-number lead">{formatNumber(active)}</h2>
+          <h2 className="counter-number lead">{formatNumber(active)}</h2>
           
           
         </div>
-          <div class="col-md span4 p-2">
+          <div className="col-md span4 p-2">
         
-          <h4 class="counter-header lead">RECOVERED</h4>
+          <h4 className="counter-header lead">RECOVERED</h4>
           
-          <h2 class="counter-number lead">{formatNumber(recovered)}</h2>
+          <h2 className="counter-number lead">{formatNumber(recovered)}</h2>
           <span>+[{formatNumber(newrecovered)}]</span>
 
         </div>
-          <div class="col-md span4 p-2">
+          <div className="col-md span4 p-2">
           
-          <h4 class="counter-header lead">DEATH</h4>
+          <h4 className="counter-header lead">DEATH</h4>
          
-          <h2 class="counter-number lead">{formatNumber(death)}</h2>
+          <h2 className="counter-number lead">{formatNumber(death)}</h2>
           <span>+[{formatNumber(newdeath)}]</span>
           
         </div>
     </div>
-    <div class="row">
-    <div class="col-md">
-    <div class="table-wrap p-0">
-<table class="table table-condensed">
+    <div className="row">
+    <div className="col-md">
+    <div className="table-wrap p-0">
+<table className="table table-condensed">
   <tbody>
     <tr>
-      <th><span class="animate-flicker" style={{color:"red"}}>|</span><span class="master-insight-header">Spread Rate:</span> <span class="master-insight-value">{(((spres-sprev)/sprev)*100).toFixed(2)}%</span></th>
+      <th><span className="animate-flicker" style={{color:"red"}}>|</span><span className="master-insight-header">Spread Rate:</span> <span className="master-insight-value">{(((spres-sprev)/sprev)*100).toFixed(2)}%</span></th>
      
-      <th><span class="animate-flicker" style={{color:"green"}}>|</span><span class="master-insight-header">Recovery Rate:</span> <span class="master-insight-value">{(((rpres-rprev)/rprev)*100).toFixed(2)}%</span></th>
+      <th><span className="animate-flicker" style={{color:"green"}}>|</span><span className="master-insight-header">Recovery Rate:</span> <span className="master-insight-value">{(((rpres-rprev)/rprev)*100).toFixed(2)}%</span></th>
       
     </tr>
     

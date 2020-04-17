@@ -21,28 +21,28 @@ function Tables(){
   
       return ( 
 
-            <div class="card">
-                <div class="card-header lead float-left">
-                    <strong class="float-left">Affected countries</strong>
+            <div className="card">
+                <div className="card-header lead float-left">
+                    <strong className="float-left">Affected countries</strong>
                 </div>
-                <div class="card-body">
+                <div className="card-body">
 
-<div class="table-wrap table-sm table-hover ">
-<table class="table sticky-top position-sticky" id="insight-data">
+<div className="table-wrap table-sm table-hover ">
+<table className="table sticky-top position-sticky" id="insight-data">
   
-  <thead class="thead-dark sticky-top position-sticky" id="insight-table-header">
+  <thead className="thead-dark sticky-top position-sticky" id="insight-table-header">
     <tr>
-      <th class="sticky-top position-sticky" scope="col">No.</th>
-      <th class="sticky-top position-sticky" scope="col">Country</th>
-      <th class="sticky-top position-sticky" scope="col">Confirmed</th>
-      <th class="sticky-top position-sticky" scope="col">New Confirmed</th>
-      <th class="sticky-top position-sticky" scope="col">Recovered</th>
-	    <th class="sticky-top position-sticky" scope="col">Critical</th>
-      <th class="sticky-top position-sticky" scope="col">Deaths</th>
-      <th class="sticky-top position-sticky" scope="col">New death</th>
-      <th class="sticky-top position-sticky" scope="col">Death Rate</th>
-      <th class="sticky-top position-sticky" scope="col">Recovery Rate</th>
-      <th class="sticky-top position-sticky" scope="col">Population</th>
+      <th className="sticky-top position-sticky" scope="col">No.</th>
+      <th className="sticky-top position-sticky" scope="col">Country</th>
+      <th className="sticky-top position-sticky" scope="col">Confirmed</th>
+      <th className="sticky-top position-sticky" scope="col">New Confirmed</th>
+      <th className="sticky-top position-sticky" scope="col">Recovered</th>
+	    <th className="sticky-top position-sticky" scope="col">Critical</th>
+      <th className="sticky-top position-sticky" scope="col">Deaths</th>
+      <th className="sticky-top position-sticky" scope="col">New death</th>
+      <th className="sticky-top position-sticky" scope="col">Death Rate</th>
+      <th className="sticky-top position-sticky" scope="col">Recovery Rate</th>
+      <th className="sticky-top position-sticky" scope="col">Population</th>
 	  
     </tr>
   </thead>
