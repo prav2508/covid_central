@@ -7,39 +7,39 @@ function Footer(){
  
       return ( 
         <div>
-		<footer class="global-footer">
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="col-sm">
-						<span class="float-left">
-						<p class="lead p-3">
+		<footer className="global-footer">
+			<div className="container-fluid">
+				<div className="row-fluid">
+					<div className="col-sm">
+						<span className="float-left">
+						<p className="lead p-3">
 						An aesthetic yet minimalistic <br/>dashboard for the pandemic Coronavirus.
 						</p>
-						<span class="lead">
+						<span className="lead">
 						Open-sourced for the community!
 						</span>
 						</span>
 					</div>
 					
-					<div class="col-sm">
-					<span class="float-right p-3">
+					<div className="col-sm">
+					<span className="float-right p-3">
 							<div>
-							<h4 class="lead">Maintained by <small><strong>Praveen</strong></small></h4>
-					<a href="https://github.com/prav2508/covid_central"type="button" class="btn btn-light follow-ups" target="_blank"
+							<h4 className="lead">Maintained by <small><strong>Praveen</strong></small></h4>
+					<a href="https://github.com/prav2508/covid_central"type="button" className="btn btn-light follow-ups" target="_blank"
           rel="noopener noreferrer">
 					<Icon.GitHub />
-					  <span class="lead"> Open-sourced at GitHub</span>
+					  <span className="lead"> Open-sourced at GitHub</span>
 					  </a><br/><br/>
-					  <a href="https://twitter.com/its_autodidact" type="button" class="btn btn-primary follow-ups" target="_blank"
+					  <a href="https://twitter.com/its_autodidact" type="button" className="btn btn-primary follow-ups" target="_blank"
           rel="noopener noreferrer">
 					<Icon.Twitter />
-					  <span class="lead"> Follow me on Twitter!</span>
+					  <span className="lead"> Follow me on Twitter!</span>
 					  </a><br/><br/>
 					  
-					  <a href="https://www.instagram.com/prav_2508/" type="button" class="btn btn-dark follow-ups" target="_blank"
+					  <a href="https://www.instagram.com/prav_2508/" type="button" className="btn btn-dark follow-ups" target="_blank"
           rel="noopener noreferrer">
 					<Icon.Instagram />
-					  <span class="lead"> Follow me on Instagram!</span>
+					  <span className="lead"> Follow me on Instagram!</span>
 					  </a>
 					 
 			</div>

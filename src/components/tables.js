@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {formatNumber_dec} from '../etc/common';
 import {formatNumber} from '../etc/common';
+import * as Icon from 'react-feather';
 
 
 function Tables(){
 
   const [country,setCountry] = useState([]);
-
+  const [search,setSearch] = useState("");
   useEffect(()=>{
     axios.get('https://corona-api.com/countries')
     .then(res=>{
@@ -18,31 +19,50 @@ function Tables(){
     })
   },[]);
   
+  const onchange = (e)=>{
+  setSearch(e.target.value);
+  }
+
+  const filteredCountries = country.sort((a, b) => a.latest_data.confirmed < b.latest_data.confirmed?1:-1).filter(country => {
+    return country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+  });
   
       return ( 
 
-            <div class="card">
-                <div class="card-header lead float-left">
-                    <strong class="float-left">Affected countries</strong>
+            <div className="card">
+                <div className="card-header lead float-left">
+                    <strong className="float-left">Affected countries</strong>
                 </div>
-                <div class="card-body">
+                <br/>
+                 <span>
+                 <div className="input-group-prepend float-right p-2">
 
-<div class="table-wrap table-sm table-hover ">
-<table class="table sticky-top position-sticky" id="insight-data">
+                    <span className="" id="basic-addon1"> <Icon.Search /></span>
+                    <input type="text" className="form-control search-input" id="search-input" placeholder="Search" onChange={onchange}/>
+                </div>
+                </span>
+                   
+                   
+
+    
+                <div className="card-body">
+                
+<div className="table-wrap table-sm table-hover ">
+<table className="table sticky-top position-sticky" id="insight-data">
   
-  <thead class="thead-dark sticky-top position-sticky" id="insight-table-header">
+  <thead className="thead-dark sticky-top position-sticky" id="insight-table-header">
     <tr>
-      <th class="sticky-top position-sticky" scope="col">No.</th>
-      <th class="sticky-top position-sticky" scope="col">Country</th>
-      <th class="sticky-top position-sticky" scope="col">Confirmed</th>
-      <th class="sticky-top position-sticky" scope="col">New Confirmed</th>
-      <th class="sticky-top position-sticky" scope="col">Recovered</th>
-	    <th class="sticky-top position-sticky" scope="col">Critical</th>
-      <th class="sticky-top position-sticky" scope="col">Deaths</th>
-      <th class="sticky-top position-sticky" scope="col">New death</th>
-      <th class="sticky-top position-sticky" scope="col">Death Rate</th>
-      <th class="sticky-top position-sticky" scope="col">Recovery Rate</th>
-      <th class="sticky-top position-sticky" scope="col">Population</th>
+      <th className="sticky-top position-sticky" scope="col">No.</th>
+      <th className="sticky-top position-sticky" scope="col">Country</th>
+      <th className="sticky-top position-sticky" scope="col">Confirmed</th>
+      <th className="sticky-top position-sticky" scope="col">New Confirmed</th>
+      <th className="sticky-top position-sticky" scope="col">Recovered</th>
+	    <th className="sticky-top position-sticky" scope="col">Critical</th>
+      <th className="sticky-top position-sticky" scope="col">Deaths</th>
+      <th className="sticky-top position-sticky" scope="col">New death</th>
+      <th className="sticky-top position-sticky" scope="col">Death Rate</th>
+      <th className="sticky-top position-sticky" scope="col">Recovery Rate</th>
+      <th className="sticky-top position-sticky" scope="col">Population</th>
 	  
     </tr>
   </thead>
@@ -50,7 +70,7 @@ function Tables(){
   <tbody>
  
 	
-			{country.sort((a, b) => a.latest_data.confirmed < b.latest_data.confirmed?1:-1).map((item,index) => (
+			{ filteredCountries.map((item,index) => (
 				<tr>
 					  <th scope="row">{index+1}</th>
 					  <td>{item.name}</td>
