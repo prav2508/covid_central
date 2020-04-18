@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {formatNumber_dec} from '../etc/common';
 import {formatNumber} from '../etc/common';
+import * as Icon from 'react-feather';
 
 
 function Tables(){
 
   const [country,setCountry] = useState([]);
-
+  const [search,setSearch] = useState("");
   useEffect(()=>{
     axios.get('https://corona-api.com/countries')
     .then(res=>{
@@ -18,6 +19,13 @@ function Tables(){
     })
   },[]);
   
+  const onchange = (e)=>{
+  setSearch(e.target.value);
+  }
+
+  const filteredCountries = country.sort((a, b) => a.latest_data.confirmed < b.latest_data.confirmed?1:-1).filter(country => {
+    return country.name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+  });
   
       return ( 
 
@@ -25,8 +33,20 @@ function Tables(){
                 <div className="card-header lead float-left">
                     <strong className="float-left">Affected countries</strong>
                 </div>
-                <div className="card-body">
+                <br/>
+                 <span>
+                 <div className="input-group-prepend float-right p-2">
 
+                    <span className="" id="basic-addon1"> <Icon.Search /></span>
+                    <input type="text" className="form-control search-input" id="search-input" placeholder="Search" onChange={onchange}/>
+                </div>
+                </span>
+                   
+                   
+
+    
+                <div className="card-body">
+                
 <div className="table-wrap table-sm table-hover ">
 <table className="table sticky-top position-sticky" id="insight-data">
   
@@ -50,7 +70,7 @@ function Tables(){
   <tbody>
  
 	
-			{country.sort((a, b) => a.latest_data.confirmed < b.latest_data.confirmed?1:-1).map((item,index) => (
+			{ filteredCountries.map((item,index) => (
 				<tr>
 					  <th scope="row">{index+1}</th>
 					  <td>{item.name}</td>
