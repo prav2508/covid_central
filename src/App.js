@@ -4,11 +4,13 @@ import Counter from './components/counter'
 import Tables from './components/tables'
 import Footer from './components/footer'
 import Charts from './components/charts'
+import image from './images/image.png';
 function App() {
   return (
     <div className="App">
      <nav className="navbar navbar-dark bg-dark">
        <span>
+       <img className={image} src={image} alt="COVID-19" />
         <a className="navbar-brand" id="cc_brand" href="https://covid-central.now.sh/"><span><b>Covid Central</b></span></a>
         </span>
     </nav>
@@ -17,6 +19,7 @@ function App() {
     </div>
    
             <div className="liner">
+            
               <span className="">#Stay_Home , #Stay_Safe</span>
             </div>
            

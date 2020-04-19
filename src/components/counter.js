@@ -1,6 +1,10 @@
 import React, { useEffect,useState } from 'react';
 import axios from 'axios';
 import {formatNumber,lastUpdated} from '../etc/common';
+import { Card, CardContent, Typography, Grid } from '@material-ui/core';
+import CountUp from 'react-countup';
+import cx from 'classnames';
+import styles from './Cards.module.css';
 
 function Counter(){
 
@@ -51,40 +55,69 @@ function Counter(){
                 </span>
                 </div>
                 </div> 
-        <div className="row">
+       
           
-          <div className="col-md span4 p-2">
+        <div className={styles.container}>
+          <Grid container spacing={4} justify="center">
+          <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.infected)}>
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
             <h4 className="counter-header lead">CONFIRMED</h4>
-           <h2 className="counter-number lead">{formatNumber(confirmed)}</h2> 
-           <span>+[{formatNumber(newconfirmed)}]</span>
+            </Typography>
+            <Typography variant="h5" component="h2">
+            <CountUp start={0} end={confirmed} duration={2.75} separator="," />
+            </Typography>
+            <Typography color="textSecondary">
+            <span>+[{formatNumber(newconfirmed)}]</span>
+            </Typography>
+           </CardContent>
+           </Grid>
+
+           <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.active)}>
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+            <h4 className="counter-header lead">ACTIVE</h4>
+            </Typography>
+            <Typography variant="h5" component="h2">
+            <CountUp start={0} end={active} duration={2.75} separator="," />
+            </Typography>
+           </CardContent>
+           </Grid>
+
+           <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.recovered)}>
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+            <h4 className="counter-header lead">RECOVERED</h4>
+            </Typography>
+            <Typography variant="h5" component="h2">
+            <CountUp start={0} end={recovered} duration={2.75} separator="," />
+            </Typography>
+            <Typography color="textSecondary">
+             +[{newrecovered}]
+            </Typography>
+           </CardContent>
+           </Grid>
+
+           <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.deaths)}>
+          <CardContent>
+            <Typography color="textSecondary" gutterBottom>
+            <h4 className="counter-header lead">DEATH</h4>
+            </Typography>
+            <Typography variant="h5" component="h2">
+            <CountUp start={0} end={death} duration={2.75} separator="," />
+            </Typography>
+            <Typography color="textSecondary">
+            +[{newdeath}]
+            </Typography>
+           </CardContent>
+           </Grid>
+           </Grid>
       </div>
 
         
         
-          <div className="col-md span4 p-2">
-          <h4 className="counter-header lead">ACTIVE</h4>
-          
-          <h2 className="counter-number lead">{formatNumber(active)}</h2>
-          
-          
-        </div>
-          <div className="col-md span4 p-2">
         
-          <h4 className="counter-header lead">RECOVERED</h4>
-          
-          <h2 className="counter-number lead">{formatNumber(recovered)}</h2>
-          <span>+[{formatNumber(newrecovered)}]</span>
-
-        </div>
-          <div className="col-md span4 p-2">
-          
-          <h4 className="counter-header lead">DEATH</h4>
-         
-          <h2 className="counter-number lead">{formatNumber(death)}</h2>
-          <span>+[{formatNumber(newdeath)}]</span>
-          
-        </div>
-    </div>
+    
     <div className="row">
     <div className="col-md">
     <div className="table-wrap p-0">
