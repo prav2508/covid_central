@@ -41,10 +41,7 @@ function Tables(){
                     <input type="text" className="form-control search-input" id="search-input" placeholder="Search" onChange={onchange}/>
                 </div>
                 </span>
-                   
-                   
 
-    
                 <div className="card-body">
                 
 <div className="table-wrap table-sm table-hover ">
@@ -59,7 +56,7 @@ function Tables(){
       <th className="sticky-top position-sticky" scope="col">Recovered</th>
 	    <th className="sticky-top position-sticky" scope="col">Critical</th>
       <th className="sticky-top position-sticky" scope="col">Deaths</th>
-      <th className="sticky-top position-sticky" scope="col">New death</th>
+      <th className="sticky-top position-sticky" scope="col">New Deaths</th>
       <th className="sticky-top position-sticky" scope="col">Death Rate</th>
       <th className="sticky-top position-sticky" scope="col">Recovery Rate</th>
       <th className="sticky-top position-sticky" scope="col">Population</th>
