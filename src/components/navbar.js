@@ -46,7 +46,7 @@ function Navbar(){
     </Link>
       <br/>
      
-      <span class="text-muted">"Confined, But Not Broken"</span>
+      <span class="text-muted" style={{opacity:"0.5"}}>-Confined, But Not Broken</span>
     </div>
       </div>
     
