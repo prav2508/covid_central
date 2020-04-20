@@ -104,7 +104,7 @@ function Counter(){
            <Grid item xs={12} md={2} spacing={10} component={Card} className={cx(styles.card, styles.deaths)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-            <h4 className="counter-header lead">DEATH</h4>
+            <h4 className="counter-header lead">CASUALITIES</h4>
             </Typography>
             <h2 className="counter-number lead">
             <CountUp start={0} end={death} duration={2.75} separator="," />
@@ -116,21 +116,8 @@ function Counter(){
            </Grid>
            </Grid>
       </div>
-          <h4 className="counter-header lead">RECOVERED</h4>
-          
-          <h2 className="counter-number lead">{formatNumber(recovered)}</h2>
-          <span>+[{formatNumber(newrecovered)}]</span>
-
-        </div>
-          <div className="col-md span4 p-2">
-          
-          <h4 className="counter-header lead">CASUALITIES</h4>
          
-          <h2 className="counter-number lead">{formatNumber(death)}</h2>
-          <span>+[{formatNumber(newdeath)}]</span>
-          
-        </div>
-    </div>
+    
 
     <div className="row">
     <div className="col-md">
@@ -150,11 +137,10 @@ function Counter(){
 </div>
     </div>
     
-    </div>
+  
          
-          
+    </div>   
       );
   }
-
 
 export default Counter

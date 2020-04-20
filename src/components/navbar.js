@@ -11,16 +11,7 @@ function Navbar(){
     }
     return(
         <div>
-
-<nav className="navbar navbar-dark bg-dark">
-       <span>
-        <a className="navbar-brand" id="cc_brand" href="https://covid-central.now.sh/"><span><b>Covid Central</b></span></a>
-        </span>
-    </nav>
-
-    <div className="nav-liner">
-    </div>
-   
+  
             <div className="liner">
               <span className="float-middle liner-text">#Stay_Home , #Stay_Safe</span>
               <span className="float-right">
