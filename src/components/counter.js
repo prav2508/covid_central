@@ -80,7 +80,7 @@ function Counter(){
         </div>
           <div className="col-md span4 p-2">
           
-          <h4 className="counter-header lead">DEATH</h4>
+          <h4 className="counter-header lead">CASUALITIES</h4>
          
           <h2 className="counter-number lead">{formatNumber(death)}</h2>
           <span>+[{formatNumber(newdeath)}]</span>

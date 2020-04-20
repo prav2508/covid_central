@@ -55,9 +55,9 @@ function Tables(){
       <th className="sticky-top position-sticky" scope="col">New Confirmed</th>
       <th className="sticky-top position-sticky" scope="col">Recovered</th>
 	    <th className="sticky-top position-sticky" scope="col">Critical</th>
-      <th className="sticky-top position-sticky" scope="col">Deaths</th>
-      <th className="sticky-top position-sticky" scope="col">New Deaths</th>
-      <th className="sticky-top position-sticky" scope="col">Death Rate</th>
+      <th className="sticky-top position-sticky" scope="col">Casualities</th>
+      <th className="sticky-top position-sticky" scope="col">New Casualities</th>
+      <th className="sticky-top position-sticky" scope="col">Casuality Rate</th>
       <th className="sticky-top position-sticky" scope="col">Recovery Rate</th>
       <th className="sticky-top position-sticky" scope="col">Population</th>
 	  
