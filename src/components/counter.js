@@ -58,54 +58,55 @@ function Counter(){
        
           
         <div className={styles.container}>
-          <Grid container spacing={4} justify="center">
-          <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.infected)}>
+          <Grid container spacing={3} justify="center">
+          <Grid item xs={12} md={2} spacing={5} component={Card} className={cx(styles.card, styles.infected)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
             <h4 className="counter-header lead">CONFIRMED</h4>
             </Typography>
-            <Typography variant="h5" component="h2">
+           
+            <h2 className="counter-number lead">
             <CountUp start={0} end={confirmed} duration={2.75} separator="," />
-            </Typography>
+            </h2>
+            
             <Typography color="textSecondary">
             <span>+[{formatNumber(newconfirmed)}]</span>
             </Typography>
            </CardContent>
            </Grid>
-
-           <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.active)}>
+           <Grid item xs={12} md={2} spacing={5} component={Card} className={cx(styles.card, styles.active)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
             <h4 className="counter-header lead">ACTIVE</h4>
             </Typography>
-            <Typography variant="h5" component="h2">
+            <h2 className="counter-number lead">
             <CountUp start={0} end={active} duration={2.75} separator="," />
-            </Typography>
+            </h2>
            </CardContent>
            </Grid>
 
-           <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.recovered)}>
+           <Grid item xs={12} md={2} spacing={10} component={Card} className={cx(styles.card, styles.recovered)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
             <h4 className="counter-header lead">RECOVERED</h4>
             </Typography>
-            <Typography variant="h5" component="h2">
+            <h2 className="counter-number lead">
             <CountUp start={0} end={recovered} duration={2.75} separator="," />
-            </Typography>
+            </h2>
             <Typography color="textSecondary">
              +[{newrecovered}]
             </Typography>
            </CardContent>
            </Grid>
 
-           <Grid item xs={12} md={2} component={Card} className={cx(styles.card, styles.deaths)}>
+           <Grid item xs={12} md={2} spacing={10} component={Card} className={cx(styles.card, styles.deaths)}>
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
             <h4 className="counter-header lead">DEATH</h4>
             </Typography>
-            <Typography variant="h5" component="h2">
+            <h2 className="counter-number lead">
             <CountUp start={0} end={death} duration={2.75} separator="," />
-            </Typography>
+            </h2>
             <Typography color="textSecondary">
             +[{newdeath}]
             </Typography>

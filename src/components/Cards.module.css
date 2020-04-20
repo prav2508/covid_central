@@ -11,22 +11,25 @@
   
   .infected {
     border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+    
   }
 
   .active {
     border-bottom: 10px solid rgba(7, 7, 27, 0.5);
+   
   }
   
   .recovered{
     border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+    
   }
   
   .deaths{
     border-bottom: 10px solid rgba(255, 0, 0, 0.5);
   }
   
-  @media only screen and (max-width: 77px) {
+  @media only screen and (max-width: 770px) {
     .card {
-      margin: 10% 0 !important;
+      margin: 2% 0% !important;
     }
   }
