@@ -47,7 +47,9 @@ function Counter(){
   },[global,confirmed,newconfirmed,active,recovered,newrecovered,death,newdeath,sprev,spres,rpres,rprev,last_updated]);
 
       return ( 
+        
           <div className="container-fluid p-0">
+            
               <div className="row p-0 m-0">
                 <div className="col-sm p-0">
                 <span className="float-middle">
@@ -114,11 +116,22 @@ function Counter(){
            </Grid>
            </Grid>
       </div>
+          <h4 className="counter-header lead">RECOVERED</h4>
+          
+          <h2 className="counter-number lead">{formatNumber(recovered)}</h2>
+          <span>+[{formatNumber(newrecovered)}]</span>
 
-        
-        
-        
-    
+        </div>
+          <div className="col-md span4 p-2">
+          
+          <h4 className="counter-header lead">CASUALITIES</h4>
+         
+          <h2 className="counter-number lead">{formatNumber(death)}</h2>
+          <span>+[{formatNumber(newdeath)}]</span>
+          
+        </div>
+    </div>
+
     <div className="row">
     <div className="col-md">
     <div className="table-wrap p-0">

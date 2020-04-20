@@ -61,7 +61,7 @@ function Charts(){
         labels: datay_confirmed.slice(Math.max(datay_confirmed.length - 30, 0)),
         datasets: [
           {
-            label: 'confirmed cases',
+            label: 'confirmed',
             fill: false,
             lineTension: 1,
             backgroundColor: '#150f91',
@@ -71,7 +71,7 @@ function Charts(){
             data: datax_confirmed.slice(Math.max(datay_confirmed.length - 30, 0))
           },
           {
-            label: 'Recovered cases',
+            label: 'Recovered',
             fill: false,
             lineTension: 1,
             backgroundColor: '#b6f23f',
@@ -81,7 +81,7 @@ function Charts(){
             data: datax_recovery.slice(Math.max(datay_confirmed.length - 30, 0))
           },
           {
-            label: 'Death cases',
+            label: 'Casuality',
             fill: false,
             lineTension: 1,
             backgroundColor: '#e00013',
@@ -92,7 +92,7 @@ function Charts(){
         ]
       }
       const pie_cases = {
-        labels: ["confirmed","recovered","death"],
+        labels: ["Confirmed","Recovered","Casuality"],
         datasets: [
           {
             label: '',
@@ -185,7 +185,7 @@ function Charts(){
               left: 0,
               right: 0,
               top: 0,
-              bottom: 50,
+              bottom: 0,
             },
           },
         display:false,

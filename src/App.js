@@ -1,13 +1,19 @@
 import React from 'react';
 import './App.css';
-import Counter from './components/counter'
-import Tables from './components/tables'
+import * as Icon from 'react-feather'
+import  { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Home from './components/home'
 import Footer from './components/footer'
 import Charts from './components/charts'
 import image from './images/image.png';
+import C_info from './components/covid-info'
+
 function App() {
   return (
+   
     <div className="App">
+
      <nav className="navbar navbar-dark bg-dark">
        <span>
        <img className={image} src={image} alt="COVID-19" />
@@ -47,6 +53,19 @@ function App() {
           </div>
 		<Footer/>  
     </div>
+
+      
+      <Router>
+      <Navbar/>
+     <Switch>
+     <Route path="/info" component={C_info}/>
+      <Route exact path="/" component={Home}/>
+     
+     </Switch>
+     <Footer/>  
+    </Router>
+    </div>
+
   );
 }
 

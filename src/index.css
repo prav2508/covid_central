@@ -122,3 +122,8 @@ padding-top:5px;
   padding: 2px;
   width: 280px;
 }
+
+.liner-text{
+  position:relative; 
+  left:25px;
+}
