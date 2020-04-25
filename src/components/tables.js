@@ -68,7 +68,7 @@ function Tables(){
  
 	
 			{ filteredCountries.map((item,index) => (
-				<tr>
+				<tr key={index}>
 					  <th scope="row">{index+1}</th>
 					  <td>{item.name}</td>
 					  <td>{item.latest_data.confirmed}</td>

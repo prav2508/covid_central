@@ -3,12 +3,7 @@ import * as Icon from 'react-feather'
 import {Link} from 'react-router-dom'
 
 function Navbar(){
-   const menu_divider_style={
-        width:"50px",
-        height:"5px",
-        color:"grey"
 
-    }
     return(
         <div>
 
@@ -24,29 +19,41 @@ function Navbar(){
             <div className="liner">
               <span className="float-middle liner-text">#Stay_Home , #Stay_Safe</span>
               <span className="float-right">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
    <Icon.Menu/>
     </button>
     </span>
             </div>
           
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
+  <div className="collapse" id="navbarToggleExternalContent">
+    <div className="bg-dark p-4">
       
       <Link to="/"> 
-          <h4 data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" class="text-white lead">
+          <h4 data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" className="text-white lead">
              Home
               </h4>
     </Link>
     
-      <Link to="/info">
-          <h4 data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleExternalContent" class="text-white lead">
+    <Link to="/insights">
+          <h4 data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleExternalContent" className="text-white lead">
+              Insights
+              </h4>
+    </Link>
+
+    <Link to="/newsfeed">
+          <h4 data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleExternalContent" className="text-white lead">
+              News Feed
+              </h4>
+    </Link>
+
+    <Link to="/info">
+          <h4 data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleExternalContent" className="text-white lead">
               About covid-19
               </h4>
     </Link>
       <br/>
      
-      <span class="text-muted" style={{opacity:"0.5"}}>-Confined, But Not Broken</span>
+      <span className="text-muted" style={{opacity:"0.5"}}>-Confined, But Not Broken</span>
     </div>
       </div>
     

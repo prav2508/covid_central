@@ -127,3 +127,13 @@ padding-top:5px;
   position:relative; 
   left:25px;
 }
+
+.news-feed{
+  height:300px;
+  
+  overflow: scroll;
+  text-overflow: ellipsis ;
+}
+.news-header{
+  color: #232529;
+}

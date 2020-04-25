@@ -61,7 +61,7 @@ function Charts(){
         labels: datay_confirmed.slice(Math.max(datay_confirmed.length - 30, 0)),
         datasets: [
           {
-            label: 'confirmed',
+            label: 'Confirmed',
             fill: false,
             lineTension: 1,
             backgroundColor: '#150f91',

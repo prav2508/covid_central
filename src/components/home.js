@@ -1,42 +1,41 @@
 import React from 'react'
 import Counter from './counter'
 import Tables from './tables'
-import Footer from './footer'
 import Charts from './charts'
 
 
-function Home(){
+function Home() {
 
-    return(
-            <div>
-         <div className="container-fluid">
-  <div className="row-fluid p-3">
-    <div className="col-md">
-      
-    <Counter/>
-    </div>
-    
-  </div>
-</div>
-<div className="container-fluid">
-            <div className="row-fluid p-2">
-                          <div className="col-md">
-                          <Tables />
-                          </div>
-                  </div>
-          </div>
-          <div className="container-fluid">
-            <div className="row-fluid p-2">
-                          <div className="col-md">
-                          <Charts/>
-                          </div>
-                  </div>
-          </div>
-		
-         
-         
-          </div>  
-    );
+        return (
+                <div>
+                        <div className="container-fluid">
+                                <div className="row-fluid p-3">
+                                        <div className="col-md">
+
+                                                <Counter />
+                                        </div>
+
+                                </div>
+                        </div>
+                        <div className="container-fluid">
+                                <div className="row-fluid p-2">
+                                        <div className="col-md">
+                                                <Tables />
+                                        </div>
+                                </div>
+                        </div>
+                        <div className="container-fluid">
+                                <div className="row-fluid p-2">
+                                        <div className="col-md">
+                                                <Charts />
+                                        </div>
+                                </div>
+                        </div>
+
+
+
+                </div>
+        );
 
 }
 
