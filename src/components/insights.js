@@ -5,7 +5,7 @@ import { Polar ,Line, Bar} from 'react-chartjs-2';
 
 function Insights() {
 
-    const [global_country, setGlobal_country] = useState([])
+    const [global_country, setGlobal_country] = useState([0])
     const [c_conf, setC_conf] = useState([0])
     const [c_act, setC_act] = useState([0])
     const [c_recv, setC_recv] = useState([0])
@@ -35,6 +35,7 @@ function Insights() {
         axios.get('/countries')
             .then(res => {
                setGlobal_country(res.data.data)
+               console.log(res.data.data)
             }).catch(err => {
                 console.log(err)
             })
@@ -263,7 +264,7 @@ function Insights() {
                 <option value="global">Global</option>
                 {global_country.map((item,i) => {
                     if (item.latest_data.confirmed > 0) {
-                        return <option key={i}value={item.code}>{item.name}</option>
+                        return <option key={i} value={item.code}>{item.name}</option>
                     }
                 })}
             </select>
