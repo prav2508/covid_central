@@ -5,7 +5,7 @@ import { Polar ,Line, Bar} from 'react-chartjs-2';
 
 function Insights() {
 
-    const [global_country, setGlobal_country] = useState([0])
+    const [global_country, setGlobal_country] = useState([])
     const [c_conf, setC_conf] = useState([0])
     const [c_act, setC_act] = useState([0])
     const [c_recv, setC_recv] = useState([0])
@@ -21,9 +21,10 @@ function Insights() {
     const [timeline, setTimeline] = useState([0])
 
 
-    useEffect(() => {
-        axios.get('/timeline')
+    useEffect(async () => {
+        await axios.get('/timeline')
             .then(res => {
+                //setGlobal_country(res.data)
                 setC_conf(res.data.data[0].confirmed)
                 setC_act(res.data.data[0].active)
                 setC_recv(res.data.data[0].recovered)
@@ -32,14 +33,14 @@ function Insights() {
             }).catch(err => {
                 console.log(err)
             })
-        axios.get('/countries')
+       await axios.get('/countries')
             .then(res => {
                setGlobal_country(res.data.data)
-               console.log(res.data.data)
+               console.log(res.data)
             }).catch(err => {
                 console.log(err)
             })
-    }, []);
+    },[]);
 
     const change = (e) => {
         if (e.target.value === "global") {
