@@ -21,25 +21,25 @@ function Insights() {
     const [timeline, setTimeline] = useState([0])
 
 
-    useEffect(async () => {
-        await axios.get('/timeline')
-            .then(res => {
-                //setGlobal_country(res.data)
-                setC_conf(res.data.data[0].confirmed)
-                setC_act(res.data.data[0].active)
-                setC_recv(res.data.data[0].recovered)
-                setC_death(res.data.data[0].deaths)
-                setTimeline(res.data.data.sort((a,b)=>a.date>b.date?1:-1))
-            }).catch(err => {
-                console.log(err)
-            })
-       await axios.get('/countries')
-            .then(res => {
-               setGlobal_country(res.data.data)
-               console.log(res.data)
-            }).catch(err => {
-                console.log(err)
-            })
+    useEffect(() => {
+        //  axios.get('/timeline')
+        //     .then(res => {
+        //         //setGlobal_country(res.data)
+        //         setC_conf(res.data.data[0].confirmed)
+        //         setC_act(res.data.data[0].active)
+        //         setC_recv(res.data.data[0].recovered)
+        //         setC_death(res.data.data[0].deaths)
+        //         setTimeline(res.data.data.sort((a,b)=>a.date>b.date?1:-1))
+        //     }).catch(err => {
+        //         console.log(err)
+        //     })
+        // axios.get('/countries')
+        //     .then(res => {
+        //        setGlobal_country(res.data.data)
+        //        console.log(res.data)
+        //     }).catch(err => {
+        //         console.log(err)
+        //     })
     },[]);
 
     const change = (e) => {
