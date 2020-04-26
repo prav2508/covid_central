@@ -5,17 +5,30 @@ import { Polar ,Line, Bar} from 'react-chartjs-2';
 
 
 function Insights(){
-const [test,setTest] = useState(null)
+const [global_country, setGlobal_country] = useState([])
 
 useEffect(()=>{
-    setTest("useeffect works!")
-})
+     axios.get('/countries')
+    .then(res => {
+       setGlobal_country(res.data.data)
+       console.log(res.data)
+    }).catch(err => {
+        console.log(err)
+    })
+},[])
 
     return(
         <div>
             Insights
             <br/>
-            {test}
+            <select className="custom-select custom-select-lg mb-3"  style={{ width: "350px" }}>
+                <option value="global">Global</option>
+                {global_country.map((item,i) => {
+                    if (item.latest_data.confirmed > 0) {
+                        return <option key={i} value={item.code}>{item.name}</option>
+                    }
+                })}
+            </select>
         </div>
     );
 }
