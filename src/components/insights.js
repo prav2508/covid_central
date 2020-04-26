@@ -24,7 +24,6 @@ function Insights() {
     useEffect(() => {
          axios.get('/timeline')
             .then(res => {
-                //setGlobal_country(res.data)
                 setC_conf(res.data.data[0].confirmed)
                 setC_act(res.data.data[0].active)
                 setC_recv(res.data.data[0].recovered)
