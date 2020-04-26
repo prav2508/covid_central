@@ -21,8 +21,8 @@ function Insights() {
     const [timeline, setTimeline] = useState([0])
 
 
-    useEffect(async () => {
-        await axios.get('/timeline')
+    useEffect(() => {
+         axios.get('/timeline')
             .then(res => {
                 //setGlobal_country(res.data)
                 setC_conf(res.data.data[0].confirmed)
@@ -33,7 +33,7 @@ function Insights() {
             }).catch(err => {
                 console.log(err)
             })
-       await axios.get('/countries')
+        axios.get('/countries')
             .then(res => {
                setGlobal_country(res.data.data)
                console.log(res.data)
