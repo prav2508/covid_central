@@ -22,7 +22,7 @@ function Insights() {
 
 
     useEffect(() => {
-         axios.get('/timeline')
+         axios.get('http://corona-api.com/timeline')
             .then(res => {
                 setC_conf(res.data.data[0].confirmed)
                 setC_act(res.data.data[0].active)
@@ -32,7 +32,7 @@ function Insights() {
             }).catch(err => {
                 console.log(err)
             })
-        axios.get('/countries')
+        axios.get('http://corona-api.com/countries')
             .then(res => {
                setGlobal_country(res.data.data)
                console.log(res.data)
@@ -43,7 +43,7 @@ function Insights() {
 
     const change = (e) => {
         if (e.target.value === "global") {
-            axios.get('/timeline')
+            axios.get('http://corona-api.com/timeline')
                 .then(res => {
                     setC_conf(res.data.data[0].confirmed)
                     setC_act(res.data.data[0].active)
@@ -54,7 +54,7 @@ function Insights() {
                     console.log(err)
                 })
         } else {
-            axios.get('/countries/' + e.target.value)
+            axios.get('http://corona-api.com/countries/' + e.target.value)
                 .then(res => {
 
                     setC_conf(res.data.data.timeline[0].confirmed)
