@@ -262,7 +262,7 @@ function Insights() {
             <h1 className="display-3">Insights</h1>
             <select className="custom-select custom-select-lg mb-3" onChange={change} style={{ width: "350px" }}>
                 <option value="global">Global</option>
-                {global_country.map((item,i) => {
+                {global_country.sort((a, b) => a.name > b.name?1:-1).map((item,i) => {
                     if (item.latest_data.confirmed > 0) {
                         return <option key={i} value={item.code}>{item.name}</option>
                     }
