@@ -23,9 +23,9 @@ useEffect(()=>{
             <br/>
             <select className="custom-select custom-select-lg mb-3"  style={{ width: "350px" }}>
                 <option value="global">Global</option>
-                {global_country.map((item,i) => {
+                {global_country.map(item => {
                     if (item.latest_data.confirmed > 0) {
-                        return <option key={i} value={item.code}>{item.name}</option>
+                        return <option value={item.code}>{item.name}</option>
                     }
                 })}
             </select>
