@@ -33,13 +33,13 @@ function Insights() {
         //     }).catch(err => {
         //         console.log(err)
         //     })
-        // axios.get('/countries')
-        //     .then(res => {
-        //        setGlobal_country(res.data.data)
-        //        console.log(res.data)
-        //     }).catch(err => {
-        //         console.log(err)
-        //     })
+        axios.get('/countries')
+            .then(res => {
+               setGlobal_country(res.data.data)
+               console.log(res.data.data)
+            }).catch(err => {
+                console.log(err)
+            })
     },[]);
 
     const change = (e) => {
