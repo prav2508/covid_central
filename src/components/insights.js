@@ -269,7 +269,7 @@ function Insights() {
                 })}
             </select>
 
-            <div className="row">
+            <div className="row m-0">
 
                 <div className="col-md span4 p-2">
                     <h4 className="counter-header lead">CONFIRMED</h4>
