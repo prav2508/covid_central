@@ -24,7 +24,7 @@
     "eject": "react-scripts eject"
 
   },
-"proxy":"https://covid-central-intel.herokuapp.com",
+
   "eslintConfig": {
     "extends": "react-app"
   },
