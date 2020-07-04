@@ -4,8 +4,10 @@ import {formatNumber} from '../etc/common';
 
 
 function Predict() {
+    const d = new Date();
+    const min_date = d.getFullYear()+'-'+(("0" + (d.getMonth() + 1)).slice(-2))+'-'+(("0" + (d.getDate() + 1)).slice(-2))
 
-    const [str_date, setStr_date] = useState()
+    const [str_date, setStr_date] = useState(min_date)
     const [pred_count, setPred_count] = useState()
     const [curr_min_date, setCurr_min_date] = useState()
     const [curr_max_date, setCurr_max_date] = useState()
@@ -22,7 +24,7 @@ function Predict() {
     },[]);
 
     useEffect(() => {
-        axios.get('https://covid-central-intel.herokuapp.com/predict/' + str_date)
+        axios.get('/predict/' + str_date)
             .then(res => {
                 //console.log(res.data)
                 setPred_count(res.data.total_count)
