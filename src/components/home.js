@@ -2,6 +2,7 @@ import React from 'react'
 import Counter from './counter'
 import Tables from './tables'
 import Charts from './charts'
+import Predict from './predict';
 
 
 function Home() {
@@ -13,6 +14,15 @@ function Home() {
                                         <div className="col-md">
 
                                                 <Counter />
+                                        </div>
+
+                                </div>
+                        </div>
+                        <div className="container-fluid">
+                                <div className="row-fluid p-3">
+                                        <div className="col-md">
+
+                                                <Predict />
                                         </div>
 
                                 </div>

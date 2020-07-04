@@ -9,6 +9,13 @@ module.exports = function(app) {
     })
   );
   app.use(
+    '/predict',
+    createProxyMiddleware({
+      target: 'http://covid-central-intel.herokuapp.com',
+      changeOrigin: true,
+    })
+  );
+  app.use(
     '/timeline',
     createProxyMiddleware({
       target: 'http://corona-api.com',
