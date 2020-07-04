@@ -22,7 +22,7 @@ function Predict() {
     },[]);
 
     useEffect(() => {
-        axios.get('/predict/' + str_date)
+        axios.get('http://covid-central-intel.herokuapp.com/predict/' + str_date)
             .then(res => {
                 //console.log(res.data)
                 setPred_count(res.data.total_count)
