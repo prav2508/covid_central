@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.use(
     '/predict',
     createProxyMiddleware({
-      target: 'http://covid-central-intel.herokuapp.com',
+      target: 'https://covid-central-intel.herokuapp.com',
       changeOrigin: true,
     })
   );
