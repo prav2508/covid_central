@@ -1,6 +1,6 @@
 # Covid Central
 
-It's an An aesthetic yet minimalistic
+An aesthetic yet minimalistic
 dashboard for the pandemic Coronavirus worldwide, Open-sourced for the community!
 
 
