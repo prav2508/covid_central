@@ -14,6 +14,7 @@ npm i && npm start
 ## Maintainers
 
 - [Praveen](https://github.com/prav2508)
+- [Pavithra]
 
 ## Contribution
 
